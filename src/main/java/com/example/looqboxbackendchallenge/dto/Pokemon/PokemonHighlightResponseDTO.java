@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonHighlightResponseDTO {
-    List<Pokemon> results = new ArrayList<Pokemon>();
+    List<Pokemon> results = new ArrayList<>();
 
     public PokemonHighlightResponseDTO() {
     }

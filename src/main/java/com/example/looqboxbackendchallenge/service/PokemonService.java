@@ -33,7 +33,6 @@ public class PokemonService {
                 readValue(response.body().string(), PokeApiFullResponseDTO.class);
 
         pokemonResultList = pokeApiFullResponseDTO.getResults();
-        System.out.println("Iniciando Listagem");
         System.out.println(pokemonResultList.size());
     }
 
