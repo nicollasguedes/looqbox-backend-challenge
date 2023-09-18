@@ -43,7 +43,7 @@ API REST que tem a finalidade de consumir a PokeAPI via requisição HTTP e atra
 _Ambientes de desenvolvimento Recomendados: Intellij, PostMan_
 
 ### Documentação da API com Swagger:
-* http://localhost:5000/api/swagger-ui/index.html/
+* http://localhost:5000/api/swagger-ui/index.html
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
