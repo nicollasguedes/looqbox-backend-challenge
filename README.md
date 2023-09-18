@@ -14,7 +14,6 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
   </ol>
@@ -26,13 +25,16 @@
 ## About The Project
 
 
-API REST que tem a finalidade de consumir a PokeAPI via requisição HTTP e atravês dos edpoinsts requisitados filtrar a pesquisa de pokemons. A API fora feita em feita em função do desafio back-end para looqbox.
+API REST que tem a finalidade de consumir a PokeAPI via requisição HTTP e atravês dos edpoinsts requisitados filtrar a pesquisa de pokemons.
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Diagrams
 
-![image](https://github.com/nicollasguedes/ESIG-Atividade-Tecnica/assets/79493632/629666dc-fdc1-4786-9e62-860bed82abc3)
+![ClassDiagram](https://github.com/nicollasguedes/looqbox-backend-challenge/assets/79493632/6ed28273-f711-49b0-a99b-79bdbdc53af4)
+![diagrama de arquitetura](https://github.com/nicollasguedes/looqbox-backend-challenge/assets/79493632/29ac4707-0085-4c44-ba41-498e3e8d9b9d)
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
