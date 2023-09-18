@@ -24,17 +24,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
 API REST que tem a finalidade de consumir a PokeAPI via requisição HTTP e atravês dos edpoinsts requisitados filtrar a pesquisa de pokemons.
   
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Diagrams
-
+"looqbox-backend-challenge/assets/"
 ![ClassDiagram](https://github.com/nicollasguedes/looqbox-backend-challenge/assets/79493632/6ed28273-f711-49b0-a99b-79bdbdc53af4)
 ![diagrama de arquitetura](https://github.com/nicollasguedes/looqbox-backend-challenge/assets/79493632/29ac4707-0085-4c44-ba41-498e3e8d9b9d)
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
