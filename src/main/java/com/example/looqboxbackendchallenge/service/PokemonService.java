@@ -40,7 +40,7 @@ public class PokemonService {
         return pokemonResultList;
     }
 
-    public List<Pokemon> getPokemon(String query, int sortType) {
+    public List<Pokemon> getPokemon(String query, String sortType) {
         List<Pokemon> pokemonList = new ArrayList<>();
         for (PokeApiResultsResponseDTO pokeApiResult : pokemonResultList) {
             if (pokeApiResult.getName().contains(query)) {
@@ -50,7 +50,7 @@ public class PokemonService {
         return new PokemonSorter(pokemonList, sortType).getPokemonList();
     }
 
-    public List<Pokemon> getPokemonHighlight(String query, int sortType, boolean ascending) {
+    public List<Pokemon> getPokemonHighlight(String query, String sortType, boolean ascending) {
         List<Pokemon> pokemonList = new ArrayList<>();
         for (PokeApiResultsResponseDTO pokeApiResult : pokemonResultList) {
             if (pokeApiResult.getName().contains(query)) {

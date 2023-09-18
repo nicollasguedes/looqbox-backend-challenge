@@ -3,6 +3,7 @@ package com.example.looqboxbackendchallenge.controller;
 import com.example.looqboxbackendchallenge.dto.Pokemon.PokemonHighlightResponseDTO;
 import com.example.looqboxbackendchallenge.dto.Pokemon.PokemonResponseDTO;
 import com.example.looqboxbackendchallenge.entity.Pokemon;
+import com.example.looqboxbackendchallenge.enumerated.SortEnum;
 import com.example.looqboxbackendchallenge.service.PokemonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,23 +17,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/pokemon")
 public class PokemonController {
-    private PokemonService pokemonService;
+    private final PokemonService pokemonService;
 
     public PokemonController(PokemonService pokemonService) {
         this.pokemonService = pokemonService;
     }
 
     @GetMapping("search")
-    public ResponseEntity<PokemonResponseDTO> searchPokemon(@RequestParam(defaultValue = "") String query,
-                                                            @RequestParam(defaultValue = "0") int sortType) {
-        List<Pokemon> pokemonList = pokemonService.getPokemon(query.toLowerCase(), sortType);
+    public ResponseEntity<PokemonResponseDTO> searchPokemon(
+            @RequestParam(defaultValue = "") String query,
+            @RequestParam(defaultValue = "ALPHABETICAL_ASC") SortEnum sortType) {
+        List<Pokemon> pokemonList = pokemonService.getPokemon(query.toLowerCase(), sortType.name());
         return ResponseEntity.status(HttpStatus.OK).body(PokemonResponseDTO.convertToDTO(pokemonList));
     }
 
     @GetMapping("search-highlight")
-    public ResponseEntity<PokemonHighlightResponseDTO> searchPokemonHighlight(@RequestParam(defaultValue = "") String query,
-                                                                              @RequestParam(defaultValue = "0") int sortType) {
-        List<Pokemon> pokemonList = pokemonService.getPokemon(query.toLowerCase(), sortType);
+    public ResponseEntity<PokemonHighlightResponseDTO> searchPokemonHighlight(
+            @RequestParam(defaultValue = "") String query,
+            @RequestParam(defaultValue = "ALPHABETICAL_ASC") SortEnum sortType) {
+        List<Pokemon> pokemonList = pokemonService.getPokemon(query.toLowerCase(), sortType.name());
         return ResponseEntity.status(HttpStatus.OK).body(PokemonHighlightResponseDTO.convertToDTO(pokemonList));
     }
 }

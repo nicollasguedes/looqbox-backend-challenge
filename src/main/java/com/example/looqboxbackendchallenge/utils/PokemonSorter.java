@@ -1,6 +1,7 @@
 package com.example.looqboxbackendchallenge.utils;
 
 import com.example.looqboxbackendchallenge.entity.Pokemon;
+import com.example.looqboxbackendchallenge.enumerated.SortEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +10,18 @@ public class PokemonSorter {
 
     private List<Pokemon> pokemonList;
 
-    public PokemonSorter(List<Pokemon> pokemonList, int sortType) {
+    public PokemonSorter(List<Pokemon> pokemonList, String sortType) {
         this.pokemonList = pokemonList;
-        if (sortType == 0) {
+        if (sortType.equals(SortEnum.ALPHABETICAL_ASC.name())) {
             mergeSortByAlphabeticalOrderInit(true);
-        } else if (sortType == 1) {
+        } else if (sortType.equals(SortEnum.LENGHT_OF_NAME_ASC.name())) {
             mergeSortByLengthOfNameInit(true);
-        } else if (sortType == 2) {
+        } else if (sortType.equals(SortEnum.ALPHABETICAL_DESC.name())) {
             mergeSortByAlphabeticalOrderInit(false);
-        } else if (sortType == 3) {
+        } else if (sortType.equals(SortEnum.LENGHT_OF_NAME_DESC.name())) {
             mergeSortByLengthOfNameInit(false);
+        } else {
+            mergeSortByAlphabeticalOrderInit(true);
         }
     }
 

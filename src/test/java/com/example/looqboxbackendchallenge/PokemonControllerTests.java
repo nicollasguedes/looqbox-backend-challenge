@@ -32,14 +32,16 @@ public class PokemonControllerTests {
 
     @Test
     public void getPokemonHttpRequest200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/pokemon/search?query=pi&sortType=0"))
+        mockMvc.perform(MockMvcRequestBuilders.get(
+                "/pokemon/search?query=pi&sortType=ALPHABETICAL_ASC"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APLICATION_JSON_UTF8));
     }
 
     @Test
     public void getPokemonHttpRequest200AllPokemon() throws Exception {
-        var result = mockMvc.perform(MockMvcRequestBuilders.get("/pokemon/search?query=&sortType=0"))
+        var result = mockMvc.perform(MockMvcRequestBuilders.get(
+                "/pokemon/search?query=&sortType=ALPHABETICAL_ASC"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APLICATION_JSON_UTF8));
 
@@ -50,14 +52,16 @@ public class PokemonControllerTests {
 
     @Test
     public void getPokemonHighlightHttpRequest200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/pokemon/search-highlight?query=pi&sortType=0"))
+        mockMvc.perform(MockMvcRequestBuilders.get(
+                "/pokemon/search-highlight?query=pi&sortType=ALPHABETICAL_ASC"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APLICATION_JSON_UTF8));
     }
 
     @Test
     public void getPokemonHighlightHttpRequest200AllPokemon() throws Exception {
-        var result = mockMvc.perform(MockMvcRequestBuilders.get("/pokemon/search-highlight?query=&sortType=0"))
+        var result = mockMvc.perform(MockMvcRequestBuilders.get(
+                "/pokemon/search-highlight?query=&sortType=ALPHABETICAL_ASC"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(APLICATION_JSON_UTF8));
 
