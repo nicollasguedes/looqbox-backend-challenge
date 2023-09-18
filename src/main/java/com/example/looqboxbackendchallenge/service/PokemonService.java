@@ -6,6 +6,8 @@ import com.example.looqboxbackendchallenge.entity.Pokemon;
 import com.example.looqboxbackendchallenge.utils.PokemonSorter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +21,7 @@ public class PokemonService {
     private final PokeApiHttpService pokeApiHttpService;
     private final ObjectMapper objectMapper;
     private List<PokeApiResultsResponseDTO> pokemonResultList;
+    Logger logger = LoggerFactory.getLogger(PokemonService.class);
 
     public PokemonService(PokeApiHttpService pokeApiHttpService, ObjectMapper objectMapper) {
         this.pokeApiHttpService = pokeApiHttpService;
@@ -33,7 +36,7 @@ public class PokemonService {
                 readValue(response.body().string(), PokeApiFullResponseDTO.class);
 
         pokemonResultList = pokeApiFullResponseDTO.getResults();
-        System.out.println(pokemonResultList.size());
+        logger.info("Pokemons listados:" + pokemonResultList.size());
     }
 
     public List<PokeApiResultsResponseDTO> getPokemonResultList() {
